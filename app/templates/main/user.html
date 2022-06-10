@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <div class="container">
+        <h2>
+            {% if user %}
+                Личный кабинет {{user.username}}
+            {% else %}
+                Пользователь {{request.path.split('/')[2]}} не найден
+            {% endif %}
+        </h2>
+    </div>
+{% endblock %}

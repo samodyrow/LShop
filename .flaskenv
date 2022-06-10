@@ -1,0 +1,2 @@
+FLASK_APP=lshop.py
+FLASK_ENV=development
