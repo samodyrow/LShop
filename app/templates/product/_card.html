@@ -1,6 +1,11 @@
 <div class="card" style="width: 18rem;">
       <a href="">
-        <img class="card-img-top" src="https://html5book.ru/wp-content/uploads/2015/10/black-dress.jpg">
+        <img class="card-img-top" 
+        {% if  product.photo_path%}
+        src="{{product.photo_path.replace('app','')}}"
+        {% else %} 
+        src="https://html5book.ru/wp-content/uploads/2015/10/black-dress.jpg"  
+        {% endif %}>
       </a>
     <div class="card-body">
       <h3 class="card-title">{{product.name}}</h3>

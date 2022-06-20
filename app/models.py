@@ -25,7 +25,12 @@ class Product(db.Model):
     name = db.Column(db.String(50), index=True)
     description = db.Column(db.String(140))
     price = db.Column(db.Float)
+    photo_path = db.Column(db.String(100))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+   
+
+    def __repr__(self) -> str:
+        return "<Product {}>".format(self.name)
 
 @login.user_loader
 def load_user(id):
